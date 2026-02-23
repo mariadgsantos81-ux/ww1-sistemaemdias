@@ -1,1 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bragança Piscinas | Internet de Alta Velocidade</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts (opcional, para um toque moderno) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            background-color: #f8fafc;
+        }
+        /* cores inovadoras: azul profundo + detalhes em ciano e verde água */
+        .bg-deep-blue {
+            background: linear-gradient(145deg, #0B2A4A 0%, #123b5e 100%);
+        }
+        .text-aqua {
+            color: #4dd0e1;
+        }
+        .btn-aqua {
+            background-color: #26c6da;
+            border: none;
+            color: #0B2A4A;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-aqua:hover {
+            background-color: #00acc1;
+            color: #fff;
+        }
+        .border-aqua {
+            border-color: #26c6da !important;
+        }
+        .icon-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background-color: rgba(38, 198, 218, 0.1);
+            border-radius: 50%;
+            color: #26c6da;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .card-hover {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -10px rgba(11, 42, 74, 0.2);
+        }
+        .hero-wave {
+            position: relative;
+            overflow: hidden;
+        }
+        .footer-link {
+            color: #b0d9f0;
+            text-decoration: none;
+        }
+        .footer-link:hover {
+            color: #4dd0e1;
+            text-decoration: underline;
+        }
+        .bg-soft-light {
+            background-color: #f0f7fc;
+        }
+    </style>
+</head>
+<body>
 
+    <!-- NAVBAR (fixa no topo, leve e moderna) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-deep-blue py-3 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="#">
+                <i class="bi bi-wifi text-aqua me-2"></i>Bragança<span class="text-aqua">.NET</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre nós</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#localizacao">Localização</a></li>
+                </ul>
+                <a href="#contato" class="btn btn-aqua ms-lg-3 px-4 py-2 rounded-pill"><i class="bi bi-headset me-2"></i>Assine já</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (imagem de fundo inovadora, com gradiente e ilustração) -->
+    <section id="home" class="hero-wave bg-deep-blue text-white py-5">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Internet de verdade,<br><span class="text-aqua">fibra óptica</span> em Bragança</h1>
+                    <p class="lead fs-5 mb-4" style="color: #d0e5f5;">Conecte-se com velocidade, estabilidade e o suporte de quem já é referência na cidade há mais de 26 anos.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#planos" class="btn btn-aqua btn-lg px-5 py-3 rounded-pill"><i class="bi bi-lightning-charge-fill me-2"></i>Ver planos</a>
+                        <a href="#sobre" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill border-2"><i class="bi bi-play-circle me-2"></i>Conhecer</a>
+                    </div>
+                    <div class="mt-5 d-flex gap-4">
+                        <div><i class="bi bi-check-circle-fill text-aqua me-2"></i><strong>+2.500</strong> clientes</div>
+                        <div><i class="bi bi-check-circle-fill text-aqua me-2"></i><strong>99,9%</strong> uptime</div>
+                        <div><i class="bi bi-check-circle-fill text-aqua me-2"></i><strong>Wi-Fi 6</strong></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <!-- imagem inovadora sobre internet: globo, dados, rede -->
+                    <img src="https://placehold.co/600x400/0B2A4A/4dd0e1?text=Internet+Rapida+%26+Estavel" alt="Conectividade" class="img-fluid rounded-4 shadow-lg" style="max-height: 350px; width: auto; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+        <!-- onda decorativa -->
+        <div class="position-absolute bottom-0 start-0 w-100" style="line-height: 0; transform: rotate(180deg);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="display: block; fill: #f8fafc; opacity: 0.1;">
+                <path d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,170.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ÍCONES + FRASES (diferenciais inovadores) -->
+    <section class="container my-5 py-4">
+        <div class="row g-4 text-center">
+            <div class="col-md-3 col-6">
+                <div class="icon-circle mx-auto">
+                    <i class="bi bi-router"></i>
+                </div>
+                <h5 class="fw-bold">Wi-Fi Mesh</h5>
+                <p class="text-secondary">Sinal potente em toda a casa, sem pontos cegos.</p>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="icon-circle mx-auto">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+                <h5 class="fw-bold">Segurança total</h5>
+                <p class="text-secondary">Proteção contra ameaças e firewall incluso.</p>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="icon-circle mx-auto">
+                    <i class="bi bi-cloud-arrow-up"></i>
+                </div>
+                <h5 class="fw-bold">Upload simétrico</h5>
+                <p class="text-secondary">Mesma velocidade para enviar e receber.</p>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="icon-circle mx-auto">
+                    <i class="bi bi-clock-history"></i>
+                </div>
+                <h5 class="fw-bold">Suporte 24/7</h5>
+                <p class="text-secondary">Atendimento humano rápido via WhatsApp.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANOS (cards) -->
+    <section id="planos" class="container py-5">
+        <div class="text-center mb-5">
+            <span class="badge bg-deep-blue text-aqua px-4 py-2 rounded-pill mb-3">ESCOLHA O SEU</span>
+            <h2 class="display-6 fw-bold">Planos de internet sob medida</h2>
+            <p class="text-secondary">Fibra óptica com a maior estabilidade da região.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm card-hover">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-wifi display-1 text-aqua"></i>
+                        <h3 class="fw-bold mt-3">Plano 300 Mega</h3>
+                        <p class="h4 my-3">R$ 99,90<span class="text-secondary fs-6">/mês</span></p>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>300 Mbps download/upload</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Wi-Fi 6 incluso</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Instalação grátis</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Suporte prioritário</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-primary mt-3 rounded-pill px-5" style="color:#0B2A4A; border-color:#0B2A4A;">Assinar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-lg card-hover" style="border-top: 5px solid #26c6da;">
+                    <div class="card-body text-center p-4">
+                        <span class="badge bg-aqua text-dark position-absolute top-0 end-0 m-3">Mais escolhido</span>
+                        <i class="bi bi-wifi display-1 text-aqua"></i>
+                        <h3 class="fw-bold mt-3">Plano 500 Mega</h3>
+                        <p class="h4 my-3">R$ 129,90<span class="text-secondary fs-6">/mês</span></p>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>500 Mbps download/upload</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Wi-Fi 6 + roteador extra</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Instalação grátis</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Suporte 24h exclusivo</li>
+                        </ul>
+                        <a href="#" class="btn btn-aqua rounded-pill px-5 mt-3">Assinar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm card-hover">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-wifi display-1 text-aqua"></i>
+                        <h3 class="fw-bold mt-3">Plano 1 Giga</h3>
+                        <p class="h4 my-3">R$ 199,90<span class="text-secondary fs-6">/mês</span></p>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>1 Gbps download/upload</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Kit Mesh tri-band</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Instalação grátis</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Gerente de conta</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-primary mt-3 rounded-pill px-5" style="color:#0B2A4A; border-color:#0B2A4A;">Assinar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE A EMPRESA (com os dados fornecidos, adaptados para provedor) -->
+    <section id="sobre" class="bg-soft-light py-5">
+        <div class="container py-4">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5">
+                    <img src="https://placehold.co/500x400/0B2A4A/white?text=Braganca+Piscinas+Provedor" alt="Sede Bragança" class="img-fluid rounded-4 shadow">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="display-6 fw-bold mb-3"><i class="bi bi-building text-aqua me-2"></i>Sobre a Bragança Piscinas</h2>
+                    <p class="lead">Mais de 26 anos de tradição em Bragança Paulista, agora conectando você ao futuro.</p>
+                    <div class="row mt-4">
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-lg text-aqua fw-bold me-2"></i><strong>CNPJ:</strong> 03.430.365/0001-44</li>
+                                <li><i class="bi bi-check-lg text-aqua fw-bold me-2"></i><strong>Insc. Estadual:</strong> 225.196.461.114</li>
+                                <li><i class="bi bi-check-lg text-aqua fw-bold me-2"></i><strong>Abertura:</strong> 29/09/1999</li>
+                                <li><i class="bi bi-check-lg text-aqua fw-bold me-2"></i><strong>Situação:</strong> <span class="badge bg-success">Ativa</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-lg text-aqua fw-bold me-2"></i><strong>Razão Social:</strong> Braganca Piscinas e Acessorios LTDA</li>
+                                <li><i class="bi bi-check-lg text-aqua fw-bold me-2"></i><strong>Nome Fantasia:</strong> Braganca Piscinas</li>
+                                <li><i class="bi bi-check-lg text-aqua fw-bold me-2"></i><strong>Atividade:</strong> 47.44-0-05 - Comércio varejista de materiais de construção</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="mt-3">Expandimos nossos negócios para levar <strong>internet de alta velocidade</strong> a todos os lares de Bragança Paulista, utilizando a mesma confiança e qualidade que nos tornaram referência no comércio local. Nossa estrutura em fibra óptica garante conexão estável, rápida e com suporte humanizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO E LOCALIZAÇÃO (dados completos) -->
+    <section id="contato" class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold">Fale com a gente</h2>
+            <p class="text-secondary">Estamos sempre disponíveis para você.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+                    <h4 class="fw-bold mb-4"><i class="bi bi-chat-dots-fill text-aqua me-2"></i>Atendimento</h4>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-envelope-fill text-aqua fs-4 me-3"></i>
+                        <div>
+                            <span class="text-secondary">E-mail:</span><br>
+                            <a href="mailto:gil@bragancapiscinas.com.br" class="text-decoration-none fw-semibold" style="color: #0B2A4A;">gil@bragancapiscinas.com.br</a>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-telephone-fill text-aqua fs-4 me-3"></i>
+                        <div>
+                            <span class="text-secondary">Telefones:</span><br>
+                            <a href="tel:+551140322634" class="text-decoration-none me-2" style="color: #0B2A4A;">(11) 4032-2634</a> | 
+                            <a href="tel:+551140321720" class="text-decoration-none" style="color: #0B2A4A;">(11) 4032-1720</a>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-whatsapp text-aqua fs-4 me-3"></i>
+                        <div>
+                            <span class="text-secondary">WhatsApp comercial:</span><br>
+                            <a href="#" class="text-decoration-none fw-semibold" style="color: #0B2A4A;">(11) 9XXXX-XXXX</a> (clique para iniciar)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="localizacao" class="col-md-6">
+                <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+                    <h4 class="fw-bold mb-4"><i class="bi bi-geo-alt-fill text-aqua me-2"></i>Nosso endereço</h4>
+                    <address class="mb-3">
+                        <strong class="fw-semibold">Braganca Piscinas e Acessorios LTDA</strong><br>
+                        Avenida Dos Imigrantes, 1728 - Complemento A<br>
+                        Jd. América - Bragança Paulista - SP<br>
+                        CEP: 12902-000
+                    </address>
+                    <p class="mb-1"><i class="bi bi-pin-map-fill text-aqua me-2"></i><strong>Para correspondência:</strong> mesmo endereço.</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3669.987412345678!2d-46.5423123456789!3d-22.9521123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cec1a2b2b2b2b%3A0x1a2b2b2b2b2b2b2b!2sAv.%20Dos%20Imigrantes%2C%201728%20-%20Jd.%20Am%C3%A9rica%2C%20Bragan%C3%A7a%20Paulista%20-%20SP%2C%2012902-000!5e0!3m2!1spt-BR!2sbr!4v1610000000000!5m2!1spt-BR!2sbr" width="100%" height="180" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="bg-deep-blue py-5 text-white text-center">
+        <div class="container py-3">
+            <h2 class="display-6 fw-bold mb-3">Pronto para navegar sem limites?</h2>
+            <p class="lead mb-4">Assine agora e ganhe o primeiro mês com 50% de desconto.</p>
+            <a href="#contato" class="btn btn-aqua btn-lg px-5 py-3 rounded-pill"><i class="bi bi-wifi me-2"></i>Quero ser cliente</a>
+        </div>
+    </section>
+
+    <!-- FOOTER com dados de registro e links -->
+    <footer class="bg-deep-blue pt-5 pb-3 text-white-50" style="border-top: 2px solid #26c6da;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-white fw-bold"><i class="bi bi-wifi text-aqua"></i> Bragança.NET</h5>
+                    <p class="small">Internet fibra óptica com a solidez de quem está em Bragança Paulista desde 1999.</p>
+                    <p class="small mb-1"><strong>CNPJ:</strong> 03.430.365/0001-44</p>
+                    <p class="small mb-1"><strong>IE:</strong> 225.196.461.114</p>
+                    <p class="small"><strong>Razão Social:</strong> Braganca Piscinas e Acessorios LTDA</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-white fw-bold">Links rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="footer-link"><i class="bi bi-chevron-right text-aqua small"></i> Início</a></li>
+                        <li><a href="#planos" class="footer-link"><i class="bi bi-chevron-right text-aqua small"></i> Planos</a></li>
+                        <li><a href="#sobre" class="footer-link"><i class="bi bi-chevron-right text-aqua small"></i> Sobre nós</a></li>
+                        <li><a href="#contato" class="footer-link"><i class="bi bi-chevron-right text-aqua small"></i> Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-white fw-bold">Horário de atendimento</h5>
+                    <p class="small mb-1">Segunda a sexta: 8h às 20h</p>
+                    <p class="small mb-1">Sábado: 9h às 13h</p>
+                    <p class="small">Suporte técnico 24h via telefone.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center small">
+                <span>© 2025 Bragança Piscinas e Acessorios LTDA - Todos os direitos reservados. | Dados institucionais conforme registro: 29/09/1999 (26 anos, 4 meses e 24 dias) - Ativa</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (necessário para o navbar toggler) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
