@@ -1,360 +1,345 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bragança Piscinas | Internet de Alta Velocidade</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>Bragança Piscinas · Tradição em qualidade</title>
+    <!-- Bootstrap 5 + ícones + fonts -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Google Fonts (opcional, para um toque moderno) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
-        * {
-            font-family: 'Inter', sans-serif;
+        * { font-family: 'Inter', sans-serif; }
+        body { background-color: #f4f9ff; }
+        /* cores inovadoras: azul piscina + verde água + detalhes em coral */
+        .bg-wave {
+            background: linear-gradient(135deg, #0a3b5b 0%, #1b5a7a 100%);
         }
-        body {
-            background-color: #f8fafc;
-        }
-        /* cores inovadoras: azul profundo + detalhes em ciano e verde água */
-        .bg-deep-blue {
-            background: linear-gradient(145deg, #0B2A4A 0%, #123b5e 100%);
-        }
-        .text-aqua {
-            color: #4dd0e1;
-        }
-        .btn-aqua {
-            background-color: #26c6da;
+        .text-pool { color: #7ed4e6; }      /* azul piscina claro */
+        .text-coral { color: #ff8360; }      /* coral vibrante */
+        .bg-coral-soft { background-color: #ffede8; }
+        .btn-coral {
+            background-color: #ff8360;
             border: none;
-            color: #0B2A4A;
+            color: #0a2e44;
             font-weight: 600;
-            transition: 0.3s;
+            transition: 0.2s;
         }
-        .btn-aqua:hover {
-            background-color: #00acc1;
+        .btn-coral:hover {
+            background-color: #e86b48;
             color: #fff;
         }
-        .border-aqua {
-            border-color: #26c6da !important;
-        }
-        .icon-circle {
+        .icon-box {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             width: 70px;
             height: 70px;
-            background-color: rgba(38, 198, 218, 0.1);
-            border-radius: 50%;
-            color: #26c6da;
+            background: rgba(126, 212, 230, 0.15);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* forma orgânica moderna */
+            color: #1b5a7a;
             font-size: 2rem;
             margin-bottom: 1rem;
+            transition: 0.3s;
+        }
+        .icon-box:hover {
+            background: #7ed4e6;
+            color: #0a2e44;
         }
         .card-hover {
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            transition: 0.2s ease-in-out;
+            border: none;
+            border-radius: 1.5rem;
         }
         .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px -10px rgba(11, 42, 74, 0.2);
-        }
-        .hero-wave {
-            position: relative;
-            overflow: hidden;
+            transform: scale(1.01);
+            box-shadow: 0 20px 30px -10px rgba(10, 59, 91, 0.2);
         }
         .footer-link {
-            color: #b0d9f0;
+            color: #bfdeef;
             text-decoration: none;
+            font-size: 0.95rem;
         }
         .footer-link:hover {
-            color: #4dd0e1;
-            text-decoration: underline;
+            color: #ff8360;
         }
-        .bg-soft-light {
-            background-color: #f0f7fc;
-        }
+        .rounded-4 { border-radius: 1.2rem; }
+        .border-pool { border-color: #7ed4e6 !important; }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR (fixa no topo, leve e moderna) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-deep-blue py-3 shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold fs-4" href="#">
-                <i class="bi bi-wifi text-aqua me-2"></i>Bragança<span class="text-aqua">.NET</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarMain">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre nós</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#localizacao">Localização</a></li>
-                </ul>
-                <a href="#contato" class="btn btn-aqua ms-lg-3 px-4 py-2 rounded-pill"><i class="bi bi-headset me-2"></i>Assine já</a>
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-wave py-3 shadow-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-3" href="#">
+            <i class="bi bi-droplet-half text-pool me-2"></i>Bragança<span class="text-pool">Piscinas</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+            </ul>
+            <a href="#contato" class="btn btn-coral ms-lg-3 px-4 py-2 rounded-pill"><i class="bi bi-chat-dots me-2"></i>Fale conosco</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== HERO com imagem inovadora sobre água / piscina ===== -->
+<section id="home" class="bg-wave text-white pt-5 pb-0">
+    <div class="container py-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <span class="badge bg-pool text-dark mb-3 px-3 py-2" style="background-color: #7ed4e6;">Há 26 anos cuidando do seu lazer</span>
+                <h1 class="display-4 fw-bold mb-4">Transformamos seu verão <span class="text-pool">em diversão</span> dentro d'água</h1>
+                <p class="lead fs-5 mb-4" style="color: #d3edf5;">Venda de materiais, acessórios e soluções completas para piscinas em Bragança Paulista. Qualidade e confiança desde 1999.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#servicos" class="btn btn-coral btn-lg px-5 py-3 rounded-pill shadow-sm"><i class="bi bi-search-heart me-2"></i>Conheça produtos</a>
+                    <a href="#sobre" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill border-2"><i class="bi bi-play-circle me-2"></i>Nossa história</a>
+                </div>
+                <!-- mini estatísticas -->
+                <div class="row mt-5 g-3">
+                    <div class="col-4"><i class="bi bi-trophy-fill text-coral me-2"></i><strong>+26 anos</strong><br><span class="small">experiência</span></div>
+                    <div class="col-4"><i class="bi bi-emoji-smile-fill text-coral me-2"></i><strong>+3.500</strong><br><span class="small">clientes</span></div>
+                    <div class="col-4"><i class="bi bi-building-fill text-coral me-2"></i><strong>Loja física</strong><br><span class="small">centro</span></div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <!-- imagem inovadora: piscina moderna com ondas digitais (placehold conceito) -->
+                <img src="https://placehold.co/600x400/0a3b5b/7ed4e6?text=Piscina+Inteligente" alt="Piscina moderna Bragança" class="img-fluid rounded-4 shadow-lg" style="max-height: 380px;">
             </div>
         </div>
-    </nav>
+    </div>
+    <!-- onda decorativa inferior -->
+    <div class="container-fluid p-0" style="margin-top: -10px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 150" style="display: block; fill: #f4f9ff;">
+            <path d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,85.3C672,75,768,85,864,101.3C960,117,1056,139,1152,138.7C1248,139,1344,117,1392,106.7L1440,96L1440,150L1392,150C1344,150,1248,150,1152,150C1056,150,960,150,864,150C768,150,672,150,576,150C480,150,384,150,288,150C192,150,96,150,48,150L0,150Z"></path>
+        </svg>
+    </div>
+</section>
 
-    <!-- HERO SECTION (imagem de fundo inovadora, com gradiente e ilustração) -->
-    <section id="home" class="hero-wave bg-deep-blue text-white py-5">
-        <div class="container py-5">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">Internet de verdade,<br><span class="text-aqua">fibra óptica</span> em Bragança</h1>
-                    <p class="lead fs-5 mb-4" style="color: #d0e5f5;">Conecte-se com velocidade, estabilidade e o suporte de quem já é referência na cidade há mais de 26 anos.</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#planos" class="btn btn-aqua btn-lg px-5 py-3 rounded-pill"><i class="bi bi-lightning-charge-fill me-2"></i>Ver planos</a>
-                        <a href="#sobre" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill border-2"><i class="bi bi-play-circle me-2"></i>Conhecer</a>
+<!-- ===== ÍCONES + FRASES (diferenciais inovadores) ===== -->
+<section class="container my-5 py-4">
+    <div class="row g-4 text-center">
+        <div class="col-md-3 col-6">
+            <div class="icon-box mx-auto"><i class="bi bi-droplet"></i></div>
+            <h5 class="fw-bold">Tratamento químico</h5>
+            <p class="text-secondary small">Produtos de primeira linha para água cristalina.</p>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="icon-box mx-auto"><i class="bi bi-fan"></i></div>
+            <h5 class="fw-bold">Bombas & filtros</h5>
+            <p class="text-secondary small">Eficiência energética e durabilidade.</p>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="icon-box mx-auto"><i class="bi bi-brightness-alt-high"></i></div>
+            <h5 class="fw-bold">Aquecedores solares</h5>
+            <p class="text-secondary small">Aproveite a piscina o ano todo.</p>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="icon-box mx-auto"><i class="bi bi-tools"></i></div>
+            <h5 class="fw-bold">Acessórios e reparos</h5>
+            <p class="text-secondary small">Capas, aspiradores, skimmers e mais.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SOBRE (com dados da empresa) ===== -->
+<section id="sobre" class="bg-white py-5 shadow-sm">
+    <div class="container py-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5 order-lg-2">
+                <img src="https://placehold.co/500x400/1b5a7a/ffffff?text=Equipe+Braganca+Piscinas" alt="Nossa equipe" class="img-fluid rounded-4 shadow">
+            </div>
+            <div class="col-lg-7 order-lg-1">
+                <h2 class="display-6 fw-bold mb-3"><i class="bi bi-water text-pool me-2"></i>Bragança Piscinas e Acessórios</h2>
+                <p class="lead mb-3">Referência em Bragança Paulista desde 1999, somos uma empresa sólida e em constante evolução.</p>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-coral me-2"></i><strong>CNPJ:</strong> 03.430.365/0001-44</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-coral me-2"></i><strong>Insc. Estadual:</strong> 225.196.461.114</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-coral me-2"></i><strong>Abertura:</strong> 29/09/1999 (26 anos, 4 meses, 24 dias)</li>
+                        </ul>
                     </div>
-                    <div class="mt-5 d-flex gap-4">
-                        <div><i class="bi bi-check-circle-fill text-aqua me-2"></i><strong>+2.500</strong> clientes</div>
-                        <div><i class="bi bi-check-circle-fill text-aqua me-2"></i><strong>99,9%</strong> uptime</div>
-                        <div><i class="bi bi-check-circle-fill text-aqua me-2"></i><strong>Wi-Fi 6</strong></div>
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-coral me-2"></i><strong>Razão Social:</strong> Braganca Piscinas e Acessorios LTDA</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-coral me-2"></i><strong>Situação:</strong> <span class="badge bg-success">Ativa</span></li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-coral me-2"></i><strong>CNAE:</strong> 47.44-0-05 (comércio de materiais de construção)</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <!-- imagem inovadora sobre internet: globo, dados, rede -->
-                    <img src="https://placehold.co/600x400/0B2A4A/4dd0e1?text=Internet+Rapida+%26+Estavel" alt="Conectividade" class="img-fluid rounded-4 shadow-lg" style="max-height: 350px; width: auto; object-fit: cover;">
+                <p class="mt-3">Atuamos no comércio varejista de materiais de construção não especificados anteriormente, com foco especial em piscinas, produtos para tratamento, manutenção e lazer. Nossa missão é proporcionar qualidade de vida e satisfação aos nossos clientes.</p>
+                <div class="bg-coral-soft p-3 rounded-4 mt-3 d-flex align-items-center">
+                    <i class="bi bi-pin-map-fill fs-2 text-coral me-3"></i>
+                    <div><strong>Nosso endereço:</strong> Avenida Dos Imigrantes, 1728 – Complemento A – Jd. América – Bragança Paulista/SP – CEP 12902-000</div>
                 </div>
             </div>
         </div>
-        <!-- onda decorativa -->
-        <div class="position-absolute bottom-0 start-0 w-100" style="line-height: 0; transform: rotate(180deg);">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="display: block; fill: #f8fafc; opacity: 0.1;">
-                <path d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,170.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ÍCONES + FRASES (diferenciais inovadores) -->
-    <section class="container my-5 py-4">
-        <div class="row g-4 text-center">
-            <div class="col-md-3 col-6">
-                <div class="icon-circle mx-auto">
-                    <i class="bi bi-router"></i>
+<!-- ===== SERVIÇOS / PRODUTOS (cards) ===== -->
+<section id="servicos" class="container py-5">
+    <div class="text-center mb-5">
+        <span class="badge bg-wave text-white px-4 py-2 rounded-pill mb-2"><i class="bi bi-grid"></i> Nossas soluções</span>
+        <h2 class="display-6 fw-bold">Tudo para sua piscina em um só lugar</h2>
+        <p class="text-secondary">Desde a construção até a manutenção diária.</p>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card card-hover h-100 p-3 border-0 shadow-sm rounded-4">
+                <div class="card-body text-center">
+                    <i class="bi bi-capsule display-3 text-pool"></i>
+                    <h4 class="fw-bold mt-3">Químicos e tratamento</h4>
+                    <p class="text-secondary">Cloro, algicidas, clarificantes, reguladores de pH e muito mais.</p>
                 </div>
-                <h5 class="fw-bold">Wi-Fi Mesh</h5>
-                <p class="text-secondary">Sinal potente em toda a casa, sem pontos cegos.</p>
-            </div>
-            <div class="col-md-3 col-6">
-                <div class="icon-circle mx-auto">
-                    <i class="bi bi-shield-check"></i>
-                </div>
-                <h5 class="fw-bold">Segurança total</h5>
-                <p class="text-secondary">Proteção contra ameaças e firewall incluso.</p>
-            </div>
-            <div class="col-md-3 col-6">
-                <div class="icon-circle mx-auto">
-                    <i class="bi bi-cloud-arrow-up"></i>
-                </div>
-                <h5 class="fw-bold">Upload simétrico</h5>
-                <p class="text-secondary">Mesma velocidade para enviar e receber.</p>
-            </div>
-            <div class="col-md-3 col-6">
-                <div class="icon-circle mx-auto">
-                    <i class="bi bi-clock-history"></i>
-                </div>
-                <h5 class="fw-bold">Suporte 24/7</h5>
-                <p class="text-secondary">Atendimento humano rápido via WhatsApp.</p>
             </div>
         </div>
-    </section>
+        <div class="col-md-4">
+            <div class="card card-hover h-100 p-3 border-0 shadow-sm rounded-4">
+                <div class="card-body text-center">
+                    <i class="bi bi-water display-3 text-pool"></i>
+                    <h4 class="fw-bold mt-3">Bombas e motobombas</h4>
+                    <p class="text-secondary">Modelos para todos os tamanhos de piscina, com baixo consumo.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-hover h-100 p-3 border-0 shadow-sm rounded-4">
+                <div class="card-body text-center">
+                    <i class="bi bi-sun display-3 text-pool"></i>
+                    <h4 class="fw-bold mt-3">Aquecimento solar</h4>
+                    <p class="text-secondary">Sistemas completos e eficientes para prolongar o uso.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-hover h-100 p-3 border-0 shadow-sm rounded-4">
+                <div class="card-body text-center">
+                    <i class="bi bi-brush display-3 text-pool"></i>
+                    <h4 class="fw-bold mt-3">Acessórios de limpeza</h4>
+                    <p class="text-secondary">Aspiradores manuais e automáticos, rodos, peneiras.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-hover h-100 p-3 border-0 shadow-sm rounded-4">
+                <div class="card-body text-center">
+                    <i class="bi bi-lightbulb display-3 text-pool"></i>
+                    <h4 class="fw-bold mt-3">Iluminação subaquática</h4>
+                    <p class="text-secondary">Lâmpadas de LED e refletores para segurança e beleza.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-hover h-100 p-3 border-0 shadow-sm rounded-4">
+                <div class="card-body text-center">
+                    <i class="bi bi-shield-shaded display-3 text-pool"></i>
+                    <h4 class="fw-bold mt-3">Capas e lonas</h4>
+                    <p class="text-secondary">Proteção contra sujeira e redução de evaporação.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- PLANOS (cards) -->
-    <section id="planos" class="container py-5">
-        <div class="text-center mb-5">
-            <span class="badge bg-deep-blue text-aqua px-4 py-2 rounded-pill mb-3">ESCOLHA O SEU</span>
-            <h2 class="display-6 fw-bold">Planos de internet sob medida</h2>
-            <p class="text-secondary">Fibra óptica com a maior estabilidade da região.</p>
-        </div>
+<!-- ===== CONTATO + LOCALIZAÇÃO COMPLETO ===== -->
+<section id="contato" class="bg-white py-5">
+    <div class="container">
         <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm card-hover">
-                    <div class="card-body text-center p-4">
-                        <i class="bi bi-wifi display-1 text-aqua"></i>
-                        <h3 class="fw-bold mt-3">Plano 300 Mega</h3>
-                        <p class="h4 my-3">R$ 99,90<span class="text-secondary fs-6">/mês</span></p>
-                        <ul class="list-unstyled mt-4">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>300 Mbps download/upload</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Wi-Fi 6 incluso</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Instalação grátis</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Suporte prioritário</li>
-                        </ul>
-                        <a href="#" class="btn btn-outline-primary mt-3 rounded-pill px-5" style="color:#0B2A4A; border-color:#0B2A4A;">Assinar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-lg card-hover" style="border-top: 5px solid #26c6da;">
-                    <div class="card-body text-center p-4">
-                        <span class="badge bg-aqua text-dark position-absolute top-0 end-0 m-3">Mais escolhido</span>
-                        <i class="bi bi-wifi display-1 text-aqua"></i>
-                        <h3 class="fw-bold mt-3">Plano 500 Mega</h3>
-                        <p class="h4 my-3">R$ 129,90<span class="text-secondary fs-6">/mês</span></p>
-                        <ul class="list-unstyled mt-4">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>500 Mbps download/upload</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Wi-Fi 6 + roteador extra</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Instalação grátis</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Suporte 24h exclusivo</li>
-                        </ul>
-                        <a href="#" class="btn btn-aqua rounded-pill px-5 mt-3">Assinar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm card-hover">
-                    <div class="card-body text-center p-4">
-                        <i class="bi bi-wifi display-1 text-aqua"></i>
-                        <h3 class="fw-bold mt-3">Plano 1 Giga</h3>
-                        <p class="h4 my-3">R$ 199,90<span class="text-secondary fs-6">/mês</span></p>
-                        <ul class="list-unstyled mt-4">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>1 Gbps download/upload</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Kit Mesh tri-band</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Instalação grátis</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-aqua me-2"></i>Gerente de conta</li>
-                        </ul>
-                        <a href="#" class="btn btn-outline-primary mt-3 rounded-pill px-5" style="color:#0B2A4A; border-color:#0B2A4A;">Assinar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOBRE A EMPRESA (com os dados fornecidos, adaptados para provedor) -->
-    <section id="sobre" class="bg-soft-light py-5">
-        <div class="container py-4">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-5">
-                    <img src="https://placehold.co/500x400/0B2A4A/white?text=Braganca+Piscinas+Provedor" alt="Sede Bragança" class="img-fluid rounded-4 shadow">
-                </div>
-                <div class="col-lg-7">
-                    <h2 class="display-6 fw-bold mb-3"><i class="bi bi-building text-aqua me-2"></i>Sobre a Bragança Piscinas</h2>
-                    <p class="lead">Mais de 26 anos de tradição em Bragança Paulista, agora conectando você ao futuro.</p>
-                    <div class="row mt-4">
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled">
-                                <li><i class="bi bi-check-lg text-aqua fw-bold me-2"></i><strong>CNPJ:</strong> 03.430.365/0001-44</li>
-                                <li><i class="bi bi-check-lg text-aqua fw-bold me-2"></i><strong>Insc. Estadual:</strong> 225.196.461.114</li>
-                                <li><i class="bi bi-check-lg text-aqua fw-bold me-2"></i><strong>Abertura:</strong> 29/09/1999</li>
-                                <li><i class="bi bi-check-lg text-aqua fw-bold me-2"></i><strong>Situação:</strong> <span class="badge bg-success">Ativa</span></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled">
-                                <li><i class="bi bi-check-lg text-aqua fw-bold me-2"></i><strong>Razão Social:</strong> Braganca Piscinas e Acessorios LTDA</li>
-                                <li><i class="bi bi-check-lg text-aqua fw-bold me-2"></i><strong>Nome Fantasia:</strong> Braganca Piscinas</li>
-                                <li><i class="bi bi-check-lg text-aqua fw-bold me-2"></i><strong>Atividade:</strong> 47.44-0-05 - Comércio varejista de materiais de construção</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p class="mt-3">Expandimos nossos negócios para levar <strong>internet de alta velocidade</strong> a todos os lares de Bragança Paulista, utilizando a mesma confiança e qualidade que nos tornaram referência no comércio local. Nossa estrutura em fibra óptica garante conexão estável, rápida e com suporte humanizado.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTATO E LOCALIZAÇÃO (dados completos) -->
-    <section id="contato" class="container py-5">
-        <div class="text-center mb-5">
-            <h2 class="display-6 fw-bold">Fale com a gente</h2>
-            <p class="text-secondary">Estamos sempre disponíveis para você.</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="bg-white p-4 rounded-4 shadow-sm h-100">
-                    <h4 class="fw-bold mb-4"><i class="bi bi-chat-dots-fill text-aqua me-2"></i>Atendimento</h4>
+            <div class="col-lg-6">
+                <div class="bg-wave text-white p-5 rounded-4 h-100 d-flex flex-column justify-content-center">
+                    <h3 class="fw-bold mb-4"><i class="bi bi-envelope-paper text-pool me-2"></i>Fale com a Bragança Piscinas</h3>
+                    <p class="mb-4">Estamos prontos para atender você pessoalmente, por telefone ou e-mail.</p>
                     <div class="d-flex align-items-center mb-3">
-                        <i class="bi bi-envelope-fill text-aqua fs-4 me-3"></i>
-                        <div>
-                            <span class="text-secondary">E-mail:</span><br>
-                            <a href="mailto:gil@bragancapiscinas.com.br" class="text-decoration-none fw-semibold" style="color: #0B2A4A;">gil@bragancapiscinas.com.br</a>
-                        </div>
+                        <i class="bi bi-envelope-fill text-pool fs-4 me-3"></i>
+                        <div><span class="small">E-MAIL</span><br><a href="mailto:gil@bragancapiscinas.com.br" class="text-white text-decoration-none fw-semibold">gil@bragancapiscinas.com.br</a></div>
                     </div>
                     <div class="d-flex align-items-center mb-3">
-                        <i class="bi bi-telephone-fill text-aqua fs-4 me-3"></i>
-                        <div>
-                            <span class="text-secondary">Telefones:</span><br>
-                            <a href="tel:+551140322634" class="text-decoration-none me-2" style="color: #0B2A4A;">(11) 4032-2634</a> | 
-                            <a href="tel:+551140321720" class="text-decoration-none" style="color: #0B2A4A;">(11) 4032-1720</a>
+                        <i class="bi bi-telephone-fill text-pool fs-4 me-3"></i>
+                        <div><span class="small">TELEFONES</span><br>
+                            <a href="tel:+551140322634" class="text-white text-decoration-none me-2">(11) 4032-2634</a> | 
+                            <a href="tel:+551140321720" class="text-white text-decoration-none">(11) 4032-1720</a>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-whatsapp text-aqua fs-4 me-3"></i>
-                        <div>
-                            <span class="text-secondary">WhatsApp comercial:</span><br>
-                            <a href="#" class="text-decoration-none fw-semibold" style="color: #0B2A4A;">(11) 9XXXX-XXXX</a> (clique para iniciar)
-                        </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-whatsapp text-pool fs-4 me-3"></i>
+                        <div><span class="small">WHATSAPP COMERCIAL</span><br><a href="#" class="text-white text-decoration-none">(11) 9xxxx-xxxx</a></div>
                     </div>
                 </div>
             </div>
-            <div id="localizacao" class="col-md-6">
-                <div class="bg-white p-4 rounded-4 shadow-sm h-100">
-                    <h4 class="fw-bold mb-4"><i class="bi bi-geo-alt-fill text-aqua me-2"></i>Nosso endereço</h4>
+            <div class="col-lg-6">
+                <div class="bg-soft p-4 rounded-4 border border-pool h-100">
+                    <h4 class="fw-bold mb-3"><i class="bi bi-pin-map-fill text-coral me-2"></i>Visite nossa loja</h4>
                     <address class="mb-3">
-                        <strong class="fw-semibold">Braganca Piscinas e Acessorios LTDA</strong><br>
+                        <strong>Braganca Piscinas e Acessorios LTDA</strong><br>
                         Avenida Dos Imigrantes, 1728 - Complemento A<br>
                         Jd. América - Bragança Paulista - SP<br>
                         CEP: 12902-000
                     </address>
-                    <p class="mb-1"><i class="bi bi-pin-map-fill text-aqua me-2"></i><strong>Para correspondência:</strong> mesmo endereço.</p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3669.987412345678!2d-46.5423123456789!3d-22.9521123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cec1a2b2b2b2b%3A0x1a2b2b2b2b2b2b2b!2sAv.%20Dos%20Imigrantes%2C%201728%20-%20Jd.%20Am%C3%A9rica%2C%20Bragan%C3%A7a%20Paulista%20-%20SP%2C%2012902-000!5e0!3m2!1spt-BR!2sbr!4v1610000000000!5m2!1spt-BR!2sbr" width="100%" height="180" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
+                    <p><strong>Para correspondência:</strong> mesmo endereço acima.</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.174312345678!2d-46.5423123456789!3d-22.9521123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cec1a2b2b2b2b%3A0x1a2b2b2b2b2b2b2b!2sAv.%20Dos%20Imigrantes%2C%201728%20-%20Jd.%20Am%C3%A9rica%2C%20Bragan%C3%A7a%20Paulista%20-%20SP%2C%2012902-000!5e0!3m2!1spt-BR!2sbr!4v1610000000000!5m2!1spt-BR!2sbr" width="100%" height="230" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CTA FINAL -->
-    <section class="bg-deep-blue py-5 text-white text-center">
-        <div class="container py-3">
-            <h2 class="display-6 fw-bold mb-3">Pronto para navegar sem limites?</h2>
-            <p class="lead mb-4">Assine agora e ganhe o primeiro mês com 50% de desconto.</p>
-            <a href="#contato" class="btn btn-aqua btn-lg px-5 py-3 rounded-pill"><i class="bi bi-wifi me-2"></i>Quero ser cliente</a>
-        </div>
-    </section>
+<!-- ===== CTA FINAL ===== -->
+<section class="bg-wave py-5">
+    <div class="container text-center text-white py-3">
+        <h2 class="display-6 fw-bold mb-3">Venha fazer um orçamento sem compromisso</h2>
+        <p class="lead mb-4">Atendimento personalizado e produtos de qualidade premium.</p>
+        <a href="#contato" class="btn btn-coral btn-lg px-5 py-3 rounded-pill"><i class="bi bi-calendar-check me-2"></i>Agende uma visita</a>
+    </div>
+</section>
 
-    <!-- FOOTER com dados de registro e links -->
-    <footer class="bg-deep-blue pt-5 pb-3 text-white-50" style="border-top: 2px solid #26c6da;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5 class="text-white fw-bold"><i class="bi bi-wifi text-aqua"></i> Bragança.NET</h5>
-                    <p class="small">Internet fibra óptica com a solidez de quem está em Bragança Paulista desde 1999.</p>
-                    <p class="small mb-1"><strong>CNPJ:</strong> 03.430.365/0001-44</p>
-                    <p class="small mb-1"><strong>IE:</strong> 225.196.461.114</p>
-                    <p class="small"><strong>Razão Social:</strong> Braganca Piscinas e Acessorios LTDA</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5 class="text-white fw-bold">Links rápidos</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#home" class="footer-link"><i class="bi bi-chevron-right text-aqua small"></i> Início</a></li>
-                        <li><a href="#planos" class="footer-link"><i class="bi bi-chevron-right text-aqua small"></i> Planos</a></li>
-                        <li><a href="#sobre" class="footer-link"><i class="bi bi-chevron-right text-aqua small"></i> Sobre nós</a></li>
-                        <li><a href="#contato" class="footer-link"><i class="bi bi-chevron-right text-aqua small"></i> Contato</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5 class="text-white fw-bold">Horário de atendimento</h5>
-                    <p class="small mb-1">Segunda a sexta: 8h às 20h</p>
-                    <p class="small mb-1">Sábado: 9h às 13h</p>
-                    <p class="small">Suporte técnico 24h via telefone.</p>
-                    <div class="d-flex gap-3 mt-3">
-                        <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="text-white fs-5"><i class="bi bi-whatsapp"></i></a>
-                    </div>
+<!-- ===== FOOTER com dados de registro ===== -->
+<footer class="bg-wave text-white-50 pt-5 pb-3" style="border-top: 2px solid #7ed4e6;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h5 class="text-white fw-bold"><i class="bi bi-droplet-half text-pool"></i> Bragança Piscinas</h5>
+                <p class="small">CNPJ 03.430.365/0001-44 · IE 225.196.461.114<br>
+                Razão Social: Braganca Piscinas e Acessorios LTDA<br>
+                Fundação: 29/09/1999 (26 anos, 4 meses e 24 dias) · Ativa</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5 class="text-white fw-bold">Navegação</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#home" class="footer-link"><i class="bi bi-chevron-right text-pool small me-1"></i>Início</a></li>
+                    <li><a href="#sobre" class="footer-link"><i class="bi bi-chevron-right text-pool small me-1"></i>Sobre</a></li>
+                    <li><a href="#servicos" class="footer-link"><i class="bi bi-chevron-right text-pool small me-1"></i>Serviços</a></li>
+                    <li><a href="#contato" class="footer-link"><i class="bi bi-chevron-right text-pool small me-1"></i>Contato</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5 class="text-white fw-bold">Horário</h5>
+                <p class="small mb-1">Segunda a sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white fs-5"><i class="bi bi-whatsapp"></i></a>
                 </div>
             </div>
-            <hr class="border-secondary">
-            <div class="text-center small">
-                <span>© 2025 Bragança Piscinas e Acessorios LTDA - Todos os direitos reservados. | Dados institucionais conforme registro: 29/09/1999 (26 anos, 4 meses e 24 dias) - Ativa</span>
-            </div>
         </div>
-    </footer>
+        <hr class="border-secondary">
+        <div class="text-center small">
+            <span>© 2025 Bragança Piscinas e Acessórios LTDA · Todos os direitos reservados. Endereço para correspondência: Avenida Dos Imigrantes 1728 A, Jd. América, Bragança Paulista/SP, CEP 12902-000</span>
+        </div>
+    </div>
+</footer>
 
-    <!-- Bootstrap JS (necessário para o navbar toggler) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
